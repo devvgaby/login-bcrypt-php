@@ -3,7 +3,19 @@
 Sistema de login e cadastro em PHP, com **hash de senhas usando Bcrypt**.
 
 ## Estrutura do projeto
-
+```bash
+raiz/
+├── config/
+│   └── database.php
+├── public/
+│   ├── cadastro.php
+│   └── login.php
+├── src/
+│   └── Usuario.php
+└── views/
+    ├── Cadastro.html
+    └── Login.html
+```
 - `config/database.php` → Configuração do banco de dados
 ---
 - `public/cadastro.php` → Cadastro de usuário
@@ -20,9 +32,19 @@ Sistema de login e cadastro em PHP, com **hash de senhas usando Bcrypt**.
 - MySQL
 - Bcrypt (password_hash)
 
-## Uso
+## Como utilizar
 
-1. Configure `config/database.php` com seu banco de dados.  
+1. Configure `config/database.php` com seu banco de dados.
+```bash
+<?php
+$host = "";
+$db   = "";
+$user = "";
+$pass = "";
+
+$conn = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+?>
+```
 2. Abra o servidor PHP na pasta raiz:
 
 ```bash
